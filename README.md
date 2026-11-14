@@ -1,146 +1,181 @@
-<h1 align="center">🤖 Machine Learning Laboratory</h1>
+<div align="center">
 
-<p align="center">
-  <b>5th Semester · Academic Year 2026–27</b><br>
-  <i>Hands-on implementations of core supervised-learning algorithms in Python</i>
-</p>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f5d4,50:9b5de5,100:f15bb5&height=230&section=header&text=Machine%20Learning%20Lab&fontSize=52&fontColor=ffffff&fontAlignY=36&animation=twinkling&desc=Regression%20%E2%80%A2%20Cross-Validation%20%E2%80%A2%20Polynomial%20Fit%20%E2%80%A2%20Regularization&descSize=17&descAlignY=58" width="100%" alt="Machine Learning Lab"/>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" />
-  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" />
-  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" />
-  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" />
-</p>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2600&pause=1000&color=9B5DE5&center=true&vCenter=true&width=620&lines=Fitting+lines+to+data+%F0%9F%93%88;Validating+with+K-Fold+%F0%9F%94%81;Solving+the+normal+equation+%F0%9F%A7%AE;Taming+overfitting+with+Ridge+%26+Lasso+%F0%9F%9B%A1%EF%B8%8F" alt="Typing animation"/>
 
----
+<br/>
 
-## 📌 About
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=python&logoColor=white)
 
-This repository has my Machine Learning Lab work. Each notebook covers one concept, from fitting a straight line to regularized regression, and shows **how the model is built** and **how it's evaluated**. Several experiments compute the results by hand (normal equations, a closed-form Lasso) alongside scikit-learn, so the maths behind each model is visible.
+![Experiments](https://img.shields.io/badge/experiments-5-9b5de5?style=flat-square)
+![Datasets](https://img.shields.io/badge/datasets-included-00b894?style=flat-square)
+![Notebooks](https://img.shields.io/badge/notebooks-all%20passing-success?style=flat-square)
+![Semester](https://img.shields.io/badge/5th%20sem-2026--27-f15bb5?style=flat-square)
 
----
+**Nikhil** · USN `4NI24CI070` · CSE (AI & ML) · The National Institute of Engineering, Mysuru
 
-## 🗂️ Experiments at a Glance
-
-| # | Experiment | Concept | Notebook |
-|:-:|------------|---------|----------|
-| 1 | Simple Linear Regression | Regression · R² · MSE | [`experiment_1_linear-regression.ipynb`](experiment_1_linear-regression.ipynb) |
-| 2 | K-Fold Cross Validation | Model validation | [`experiment_2_kfold.ipynb`](experiment_2_kfold.ipynb) |
-| 3 | Degree-2 Polynomial Regression | Normal equations | [`experiment_3_2degree_poly.ipynb`](experiment_3_2degree_poly.ipynb) |
-| 4 | Regularization: OLS vs Ridge vs Lasso | L1 / L2 penalties | [`experiment_4_regularization_lasso_ridge.ipynb`](experiment_4_regularization_lasso_ridge.ipynb) |
-| A1 | Activity 1: Regression & Regularization | Train / validation / test | [`activity_1.ipynb`](activity_1.ipynb) |
+</div>
 
 ---
 
-## 🔬 Experiment Details
+## 🚀 About
 
-### 🔹 Experiment 1: Simple Linear Regression
-Predicts **Marks** from **Hours Studied**.
-- Load the dataset with Pandas
-- Fit `LinearRegression` and get the **slope** and **intercept**
-- Predict marks for every student
-- Evaluate with **R² score** and **Mean Squared Error**
-- Plot the actual data against the regression line
-- Predict the marks for a new input (10 hours of study)
+Five notebooks covering the core ideas of **supervised regression**: fitting a model, validating it honestly, extending it to curves, and controlling overfitting. Several experiments work the maths out by hand (the **normal equation**, a **closed-form Lasso**) alongside scikit-learn, so the results can be checked against first principles.
 
-📄 *Dataset:* `linear_regression.csv`
-
-### 🔹 Experiment 2: K-Fold Cross Validation
-Checks how well Linear Regression generalizes beyond a single split.
-- Split the data into **5 folds** with `KFold`
-- In each fold, train on 4 parts and test on the remaining 1
-- Report the per-fold coefficients, **MSE** and **R²**
-
-📄 *Dataset:* `k_fold_linear_regression (2).csv`
-
-### 🔹 Experiment 3: Second-Degree Polynomial Regression
-Fits **y = ax² + bx + c** from first principles, without a model library.
-- Build the design matrix `[x², x, 1]`
-- Compute **XᵀX** and **Xᵀy**
-- Solve the **normal equation** β = (XᵀX)⁻¹Xᵀy to get *a*, *b* and *c*
-- Compute the **MSE** and **R²** manually
-- Plot the fitted parabola against the data points
-
-📄 *Dataset:* `Degree 2 Polynomial.csv`
-
-### 🔹 Experiment 4: Regularization (OLS vs Ridge vs Lasso)
-Compares ordinary least squares with its regularized versions on a linear dataset (x = 1…9).
-- **Split:** train (x = 1–5) · validation (x = 6–7) · test (x = 8–9)
-- **OLS:** `LinearRegression`
-- **Ridge (L2):** `Ridge(alpha=1)`
-- **Lasso (L1):** a closed-form soft-thresholding solution, `m = sign(m_ols)·max(0, |m_ols| − 1/S)`
-- Prints each model's equation and predictions, and summarizes the **Train / Validation / Test MSE** in one table
-
-📄 *Dataset:* defined inside the notebook
-
-### 🔹 Activity 1: Regression & Regularization
-A hands-on activity that repeats the OLS → Ridge → Lasso workflow with the same three-way split and puts the results side by side in a single comparison table.
-
-📄 *Dataset:* defined inside the notebook
+> [!TIP]
+> Every notebook runs end to end, and all of the datasets it needs are in this repository. Clone it and run.
 
 ---
 
-## 📊 Evaluation Metrics Used
+## 🔄 Workflow
 
-| Metric | What it tells us |
-|--------|------------------|
-| **MSE** | Average squared error between prediction and truth (lower is better) |
-| **R² Score** | Share of the variance in the target that the model explains (closer to 1 is better) |
-| **Train vs Validation vs Test MSE** | Whether a model is underfitting, overfitting or generalizing well |
+Every experiment follows the same pipeline:
+
+```mermaid
+flowchart LR
+    A[📂 Load Data] --> B[✂️ Split]
+    B --> C[🧠 Train Model]
+    C --> D[🎯 Predict]
+    D --> E[📊 Evaluate]
+    E -. tune .-> C
+    style A fill:#00f5d4,stroke:#00b894,color:#000
+    style B fill:#5ee7df,stroke:#00b894,color:#000
+    style C fill:#9b5de5,stroke:#6c3fc4,color:#fff
+    style D fill:#c77dff,stroke:#6c3fc4,color:#fff
+    style E fill:#f15bb5,stroke:#c2185b,color:#fff
+```
 
 ---
 
-## ⚙️ Getting Started
+## 🧪 Experiments
+
+| | Experiment | Key Idea | Headline Result | Notebook |
+|:-:|---|---|---|:-:|
+| 📈 | **Simple Linear Regression** | Least-squares line | R² = **0.9996** | [▶️](experiment_1_linear-regression.ipynb) |
+| 🔁 | **K-Fold Cross Validation** | 5-fold generalization check | Mean MSE = **0.302** | [▶️](experiment_2_kfold.ipynb) |
+| 〰️ | **Polynomial Regression (deg 2)** | Normal equation | Recovered **y = 3x² + 2x + 1** | [▶️](experiment_3_2degree_poly.ipynb) |
+| 🛡️ | **OLS vs Ridge vs Lasso** | L1 / L2 penalties | Lasso test MSE **3.3× lower** than Ridge | [▶️](experiment_4_regularization_lasso_ridge.ipynb) |
+| ⚡ | **Activity 1: Regression & Regularization** | Train / val / test split | Matches Exp. 4 | [▶️](activity_1.ipynb) |
+
+---
+
+## 📊 Results
+
+<details open>
+<summary><b>📈 Experiment 1: Simple Linear Regression</b> (Hours Studied → Marks)</summary>
+<br/>
+
+| Metric | Value |
+|---|---|
+| Fitted line | **Marks = 3.586 × Hours + 27.395** |
+| R² Score | **0.9996** |
+| Prediction for 10 hours of study | **63.25 marks** |
+
+Each extra hour of study adds about **3.6 marks**, and the line explains **99.96%** of the variance in marks.
+</details>
+
+<details>
+<summary><b>🔁 Experiment 2: K-Fold Cross Validation</b> (k = 5)</summary>
+<br/>
+
+| Fold | MSE | R² |
+|:-:|:-:|:-:|
+| 1 | 0.76 | 0.878 |
+| 2 | 0.40 | 0.935 |
+| 3 | 0.12 | 0.981 |
+| 4 | 0.17 | 0.972 |
+| 5 | 0.06 | 0.985 |
+| **Mean** | **0.302** | **0.950** |
+
+> [!NOTE]
+> Fold 1 has the highest error. That's expected: without shuffling, it holds out the extreme low-hours records, so the model has to **extrapolate** instead of interpolate.
+</details>
+
+<details>
+<summary><b>〰️ Experiment 3: Polynomial Regression via the Normal Equation</b></summary>
+<br/>
+
+Solved **β = (XᵀX)⁻¹Xᵀy** directly with NumPy, using the design matrix `[x², x, 1]`.
+
+| Coefficient | Value |
+|:-:|:-:|
+| a | **3** |
+| b | **2** |
+| c | **1** |
+| Train MSE | ≈ 0 (1.6 × 10⁻³⁰) |
+| R² | **1.0** |
+
+The data was generated by **y = 3x² + 2x + 1**, and the normal equation recovers it exactly.
+</details>
+
+<details>
+<summary><b>🛡️ Experiment 4: OLS vs Ridge vs Lasso</b> (λ = 1)</summary>
+<br/>
+
+Split: **train** x = 1–5 · **validation** x = 6–7 · **test** x = 8–9
+
+| Model | Equation | Train MSE | Val MSE | Test MSE |
+|---|---|:-:|:-:|:-:|
+| OLS | y = 2.000x + 3.000 | 0.000 | 0.000 | 0.000 |
+| Ridge (L2) | y = 1.818x + 3.545 | 0.066 | 0.413 | 1.008 |
+| Lasso (L1) | y = 1.900x + 3.300 | 0.020 | 0.125 | 0.305 |
+
+> [!IMPORTANT]
+> The data is **perfectly linear with no noise**, so there's nothing to overfit, and OLS wins with zero error. Regularization only adds bias here: Ridge shrinks the slope more than Lasso does, so its error grows fastest as x moves further from the training range. On real, noisy data the ranking can flip, which is exactly why a validation set is used.
+</details>
+
+---
+
+## ⚙️ Quick Start
 
 ```bash
-# 1. Clone the repository
 git clone <your-repo-url>
 cd <repo-folder>
-
-# 2. Install dependencies
 pip install numpy pandas matplotlib scikit-learn jupyter
-
-# 3. Launch Jupyter
 jupyter notebook
 ```
 
-> 💡 All datasets are included in this repository. On Google Colab, upload the CSV for the experiment along with the notebook before running the cells.
+> [!TIP]
+> **Using Google Colab?** Upload the notebook together with its CSV file (listed below).
 
 ---
 
-## 📁 Repository Structure
+## 📁 Structure
 
-```
-.
-├── experiment_1_linear-regression.ipynb          # Simple Linear Regression
-├── experiment_2_kfold.ipynb                      # K-Fold Cross Validation
-├── experiment_3_2degree_poly.ipynb               # Polynomial Regression (normal equation)
-├── experiment_4_regularization_lasso_ridge.ipynb # OLS vs Ridge vs Lasso
-├── activity_1.ipynb                              # Regression & Regularization activity
-├── linear_regression.csv                         # Dataset for Experiment 1
-├── k_fold_linear_regression (2).csv              # Dataset for Experiment 2
-├── Degree 2 Polynomial.csv                       # Dataset for Experiment 3
+```text
+ML-Lab-4NI24CI070/
+├── experiment_1_linear-regression.ipynb           # Linear regression + R²
+├── experiment_2_kfold.ipynb                       # 5-fold cross validation
+├── experiment_3_2degree_poly.ipynb                # Normal-equation polynomial fit
+├── experiment_4_regularization_lasso_ridge.ipynb  # OLS vs Ridge vs Lasso
+├── activity_1.ipynb                               # Regularization activity
+├── linear_regression.csv                          # Data for Exp. 1
+├── k_fold_linear_regression (2).csv               # Data for Exp. 2
+├── Degree 2 Polynomial.csv                        # Data for Exp. 3
 └── README.md
 ```
 
 ---
 
-## 🎯 Learning Outcomes
+## 🎯 Key Takeaways
 
-- Build and interpret a linear regression model (slope, intercept, R²)
-- Understand why **cross-validation** gives a more reliable estimate than one split
-- Derive polynomial regression coefficients from the **normal equation**
-- See how **L2 (Ridge)** shrinks coefficients and **L1 (Lasso)** can push them to zero
-- Use train / validation / test splits to diagnose **underfitting and overfitting**
+- ✅ A high R² on training data isn't proof of a good model. **Cross-validation** is what shows whether it generalizes.
+- ✅ Polynomial regression is still *linear* regression, just on transformed features, and it can be solved in closed form.
+- ✅ **Ridge** shrinks every coefficient smoothly, while **Lasso** soft-thresholds them and can push them to zero.
+- ✅ Regularization trades a little bias for lower variance. It pays off on noisy data, not on perfectly clean data.
 
 ---
 
-<p align="center">
-  <b>👨‍💻 Nikhil</b><br>
-  USN: 4NI24CI070<br>
-  CSE (AI & ML) · The National Institute of Engineering, Mysuru<br>
-  <i>Machine Learning Laboratory · 2026–27</i>
-</p>
+<div align="center">
 
-<p align="center">⭐ <b>LEARN · IMPLEMENT · EXPERIMENT</b> ⭐</p>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=3000&pause=1000&color=00F5D4&center=true&vCenter=true&width=420&lines=%E2%AD%90+Star+this+repo+if+it+helped!;Thanks+for+visiting+%F0%9F%91%8B" alt="Thanks"/>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:f15bb5,50:9b5de5,100:00f5d4&height=110&section=footer" width="100%"/>
+
+</div>
